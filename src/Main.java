@@ -2,19 +2,23 @@ import newbank.*;
 
 public class Main {
     public static void main(String[] args) {
-        Clientes clienteTeste = new Clientes("Gabi", "1321321231321", "Irmão Norbert Francisco"); //teste do override
+
+        Endereco enderecoIrmao = new Endereco( " R. Irmão Norberto", 700, "Jardim Carvalho", "Porto Alegre", "RS");
+        Endereco enderecoJardim = new Endereco ( "Rua 1", 1, "Jardim Getsâmani", "Jerusalém", "Israel");
+
+        Clientes clienteTeste = new Clientes("Gabi", "1321321231321", enderecoIrmao); //teste do override
         System.out.println(clienteTeste);
         System.out.println("Nome do cliente é " + clienteTeste.getNome());
         System.out.println("O cpf do cliente é " + clienteTeste.getCpf());
-        System.out.println("O endereço do cliente é " + clienteTeste.getLogradouro());
+        System.out.println("O endereço do cliente é " + clienteTeste.getEndereco());
 
 
-        Clientes clienteDoisTeste = new Clientes("Mateus", "00000000003", "Jardim Getsâmani");
+        Clientes clienteDoisTeste = new Clientes("Mateus", "00000000003", enderecoJardim);
         Conta contaCorrente = new ContaCorrente(2, clienteDoisTeste);
         System.out.println("**********************************************************************");
         System.out.println("Nome do cliente é " + clienteDoisTeste.getNome());
         System.out.println("O cpf do cliente é " + clienteDoisTeste.getCpf());
-        System.out.println("O endereço do cliente é " + clienteDoisTeste.getLogradouro());
+        System.out.println("O endereço do cliente é " + clienteDoisTeste.getEndereco());
 
         System.out.print(contaCorrente);
 
@@ -23,7 +27,7 @@ public class Main {
         contaCorrente.verSaldo();
 
 
-        Clientes cliente3Teste = new Clientes("Pedro", "00000000002", "Jardim Getsâmani");
+        Clientes cliente3Teste = new Clientes("Pedro", "00000000002", enderecoJardim);
         Conta contaPoupanca = new ContaPoupanca(3, cliente3Teste);
         System.out.println("**********************************************************************");
         System.out.println("Nome do cliente é " + cliente3Teste.getNome());

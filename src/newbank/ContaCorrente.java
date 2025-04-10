@@ -1,11 +1,13 @@
 package newbank;
 
 public class ContaCorrente extends Conta{
+
     private static final double TAXA_SAQUE = 2.50;
 
-    public ContaCorrente (int numero, Clientes cliente){
-        super(numero, cliente); //chama o construtor da classe mãe, que é Conta
+    public ContaCorrente (int numero, Clientes cliente){//chama o construtor da classe mãe, que é Conta
+        super(numero, cliente, TipoConta.CORRENTE); // O tipo da conta é corrente, ou seja, é fixo, e conhecido dentro da classe,e não deve ser informado por quem está criando o objeto
     }
+
 
     @Override
     public void sacar(double valor){ //usamos o override aqui porque a classe mãe, Conta, é abstrata com métodos abstratos inclusive

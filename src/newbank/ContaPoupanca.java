@@ -5,8 +5,8 @@ public class ContaPoupanca extends Conta{ //herança
     private static final int LIMITE_SAQUES = 3;
     private int saquesRealizados = 0;
 
-    public ContaPoupanca(int numero, Clientes cliente){
-        super(numero, cliente); //chama o construtor da classe mãe, que é Conta
+    public ContaPoupanca(int numero, Clientes cliente){ //chama o construtor da classe mãe, que é Conta
+        super(numero, cliente, TipoConta.POUPANCA); // O tipo da conta é poupança, ou seja, é fixo, e conhecido dentro da pró´ria classe,e não deve ser informado por quem está criando o objeto
     }
     @Override
     public void sacar(double valor){ //usamos o override aqui porque a classe mãe, Conta, é abstrata com métodos abstratos inclusive

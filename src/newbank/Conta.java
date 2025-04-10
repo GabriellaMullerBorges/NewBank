@@ -1,13 +1,16 @@
 package newbank;
 
 public abstract class Conta { //classe abstrata, não pode ser instanciada diretamente, erve apenas como molde e facilita a hernaça
+
     private int numero;
     protected double saldo; //acesso para as classes filhas
-    private Clientes cliente;
+    private TipoConta tipo; //Enum do tipo da conta;
+    private Clientes cliente; // composição, quando um a classe tem outra classe como parte dela, como a conta tem um cliente;
 
-    public Conta(int numero, Clientes cliente){
+    public Conta(int numero, Clientes cliente, TipoConta tipo){
         this.numero = numero;
-        this.cliente = cliente; //composição tem-um pois a conta tem um cliente
+        this.cliente = cliente; //COMPOSIÇÃO tem-um pois a conta tem um cliente;
+        this.tipo = tipo; //usando o Enum TipoConta;
         this.saldo= 0.0;
     }
 
@@ -31,8 +34,13 @@ public abstract class Conta { //classe abstrata, não pode ser instanciada diret
         return saldo;
     }
 
+    public TipoConta getTipo(){
+        return tipo;
+    }
+
+
     @Override
     public String toString(){
-        return "Conta de nº " + numero + " pertecente ali cliente " + cliente + " possui atualmente o saldo de R$" + saldo;
+        return "Conta de nº " + numero + "do tipo" + tipo + " pertecente ao cliente " + cliente + " possui atualmente o saldo de R$" + saldo;
     }
 }
