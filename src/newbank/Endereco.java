@@ -2,12 +2,12 @@ package newbank;
 
 public class Endereco {
     private final String rua;
-    private final Integer numero;
+    private final String numero;
     private final String bairro;
     private final String cidade;
     private final String estado;
 
-    public Endereco ( String rua,Integer numero, String bairro, String cidade, String estado){
+    public Endereco (String rua, String numero, String bairro, String cidade, String estado){
         this.rua = rua; // aqui usamos para dizer que o atributo da classe ,identificdo pelo this, é o parâmetro recebido no construtor
         this.numero = numero;
         this.bairro = bairro;
@@ -19,7 +19,7 @@ public class Endereco {
         return rua;
     }
 
-    public Integer getNumero(){
+    public String getNumero(){
         return numero;
     }
 
