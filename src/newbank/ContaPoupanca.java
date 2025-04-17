@@ -1,6 +1,6 @@
 package newbank;
 
-public class ContaPoupanca extends Conta{ //herança
+public class ContaPoupanca extends Conta implements OperacoesBancarias{ //herança e interface --> implementação do contrato
 
     private static final int LIMITE_SAQUES = 3;
     private int saquesRealizados = 0;

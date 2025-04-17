@@ -1,6 +1,6 @@
 package newbank;
 
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta implements OperacoesBancarias{ //herança e interface --> implementação do contrato
 
     private static final double TAXA_SAQUE = 2.50;
 
